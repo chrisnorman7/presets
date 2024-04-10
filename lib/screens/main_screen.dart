@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../src/preset.dart';
 import 'presets_screen.dart';
+import 'text_list_screen.dart';
 
 /// The main screen of the application.
 class MainScreen extends StatelessWidget {
@@ -216,7 +217,29 @@ class MainScreen extends StatelessWidget {
             ),
             ListTile(
               title: const Text('Washing Machine'),
-              onTap: () {},
+              onTap: () => context.pushWidgetBuilder(
+                (final context) => const TextListScreen(
+                  title: 'Logik Washing Machine',
+                  items: [
+                    '0: Off',
+                    '1: Cotton 20',
+                    '2: Cotton 40',
+                    '3: Eco 40-60',
+                    '4: Cotton 60',
+                    '5: Cotton 60 (with pre-wash)',
+                    '6: Cotton 90',
+                    '7: Rinse',
+                    '8: Spin and drain',
+                    '9: Drum clean',
+                    '10: Down wear 40',
+                    '11: Synthetics 20',
+                    '12: synthetics 40',
+                    '13: Hand wash 40',
+                    '14: Shirts 40',
+                    '15: Quick 30',
+                  ],
+                ),
+              ),
             ),
           ],
         ),
