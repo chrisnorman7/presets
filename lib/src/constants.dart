@@ -40,6 +40,9 @@ String andList(
 
 /// Code copied from [https://stackoverflow.com/questions/54775097/formatting-a-duration-like-hhmmss].
 String printDuration(final Duration duration) {
+  if (duration == Duration.zero) {
+    return '0 minutes';
+  }
   final inHours = duration.inHours;
   final hours = '$inHours ${pluralise(inHours, 'hour')}';
   final inMinutes = duration.inMinutes.remainder(60).abs();
