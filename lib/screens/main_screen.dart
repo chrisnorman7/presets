@@ -22,7 +22,7 @@ class MainScreen extends StatelessWidget {
           children: [
             ListTile(
               autofocus: true,
-              title: const Text('Instance Pot Left Side'),
+              title: const Text('Instant Pot Left Side'),
               onTap: () => context.pushWidgetBuilder(
                 (final context) => const PresetsScreen(
                   presets: <Preset>[
