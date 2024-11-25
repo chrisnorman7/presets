@@ -2,10 +2,13 @@ import 'package:backstreets_widgets/extensions.dart';
 import 'package:backstreets_widgets/screens.dart';
 import 'package:backstreets_widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../src/constants.dart';
 import '../src/preset.dart';
 import 'preset_screen.dart';
+
+void _doNothing() {}
 
 /// A screen which shows [presets].
 class PresetsScreen extends StatelessWidget {
@@ -31,14 +34,30 @@ class PresetsScreen extends StatelessWidget {
             itemBuilder: (final context, final index) {
               final preset = presets[index];
               final defaultDuration = printDuration(preset.defaultDuration);
-              return ListTile(
-                autofocus: index == 0,
-                title: Text(preset.name),
-                subtitle: Text(
-                  '$defaultDuration at ${preset.defaultTemp} °',
-                ),
-                onTap: () => context.pushWidgetBuilder(
-                  (final builderContext) => PresetScreen(preset: preset),
+              final minDuration = printDuration(preset.minDuration);
+              final maxDuration = printDuration(preset.maxDuration);
+              return Semantics(
+                customSemanticsActions: {
+                  CustomSemanticsAction(
+                    label:
+                        'Default: $defaultDuration at ${preset.defaultTemp} °',
+                  ): _doNothing,
+                  CustomSemanticsAction(
+                    label: 'Min: $minDuration at ${preset.minTemp} °',
+                  ): _doNothing,
+                  CustomSemanticsAction(
+                    label: 'Max: $maxDuration at ${preset.maxTemp} °',
+                  ): _doNothing,
+                },
+                child: ListTile(
+                  autofocus: index == 0,
+                  title: Text(preset.name),
+                  subtitle: Text(
+                    '$defaultDuration at ${preset.defaultTemp} °',
+                  ),
+                  onTap: () => context.pushWidgetBuilder(
+                    (final builderContext) => PresetScreen(preset: preset),
+                  ),
                 ),
               );
             },
