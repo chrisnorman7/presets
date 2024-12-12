@@ -1,5 +1,5 @@
+import 'package:backstreets_widgets/extensions.dart';
 import 'package:backstreets_widgets/screens.dart';
-import 'package:backstreets_widgets/util.dart';
 import 'package:backstreets_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -27,8 +27,8 @@ class TextListScreen extends StatelessWidget {
             itemBuilder: (final context, final index) {
               final item = items[index];
               return ListTile(
-                title: Text(item),
-                onTap: () => setClipboardText(item),
+                title: Text('$index: $item'),
+                onTap: item.copyToClipboard,
                 autofocus: index == 0,
               );
             },

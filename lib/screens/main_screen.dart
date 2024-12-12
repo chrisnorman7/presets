@@ -1,11 +1,10 @@
 import 'package:backstreets_widgets/extensions.dart';
 import 'package:backstreets_widgets/screens.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import '../src/preset.dart';
+import '../widgets/presets_list_tile.dart';
 import 'presets_screen.dart';
-import 'text_list_screen.dart';
 
 /// The main screen of the application.
 class MainScreen extends StatelessWidget {
@@ -18,22 +17,39 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     const washingMachinePresets = [
-      '0: Off',
-      '1: Cotton 20',
-      '2: Cotton 40',
-      '3: Eco 40-60',
-      '4: Cotton 60',
-      '5: Cotton 60 (with pre-wash)',
-      '6: Cotton 90',
-      '7: Rinse',
-      '8: Spin and drain',
-      '9: Drum clean',
-      '10: Down wear 40',
-      '11: Synthetics 20',
-      '12: synthetics 40',
-      '13: Hand wash 40',
-      '14: Shirts 40',
-      '15: Quick 30',
+      'Off',
+      'Cotton 20',
+      'Cotton 40',
+      'Eco 40-60',
+      'Cotton 60',
+      'Cotton 60 (with pre-wash)',
+      'Cotton 90',
+      'Rinse',
+      'Spin and drain',
+      'Drum clean',
+      'Down wear 40',
+      'Synthetics 20',
+      'synthetics 40',
+      'Hand wash 40',
+      'Shirts 40',
+      'Quick 30',
+    ];
+    const dryerPresets = [
+      'Mixed',
+      'Eco',
+      'Cotton',
+      'Synthetics',
+      'Wool',
+      'Silk',
+      'Anti allergy',
+      'Cuddly toys',
+      'Pre iron',
+      'Refresh',
+      'Duvet',
+      'Bed and bath',
+      'Baby',
+      'Jeans',
+      'Shirts',
     ];
     return SimpleScaffold(
       title: 'Presets',
@@ -235,21 +251,11 @@ class MainScreen extends StatelessWidget {
               ),
             ),
           ),
-          Semantics(
-            customSemanticsActions: {
-              for (final preset in washingMachinePresets)
-                CustomSemanticsAction(label: preset): () {},
-            },
-            child: ListTile(
-              title: const Text('Washing Machine'),
-              onTap: () => context.pushWidgetBuilder(
-                (final context) => const TextListScreen(
-                  title: 'Logik Washing Machine',
-                  items: washingMachinePresets,
-                ),
-              ),
-            ),
+          const PresetsListTile(
+            title: 'Washing Machine',
+            presets: washingMachinePresets,
           ),
+          const PresetsListTile(title: 'Tumble Dryer', presets: dryerPresets),
         ],
       ),
     );
