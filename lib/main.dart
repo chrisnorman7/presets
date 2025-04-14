@@ -1,8 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-import 'screens/main_screen.dart';
+import 'package:presets/presets.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,7 +1,6 @@
 import 'package:backstreets_widgets/widgets.dart';
 import 'package:flutter/material.dart';
-
-import '../src/constants.dart';
+import 'package:presets/src/constants.dart';
 
 /// A [ListView] which shows [temperature] and [duration].
 class PresetListTile extends StatelessWidget {

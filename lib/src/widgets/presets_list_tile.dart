@@ -1,8 +1,7 @@
 import 'package:backstreets_widgets/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-import '../screens/text_list_screen.dart';
+import 'package:presets/presets.dart';
 
 /// A list tile which allows showing [presets].
 class PresetsListTile extends StatelessWidget {

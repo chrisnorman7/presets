@@ -1,10 +1,9 @@
 import 'package:backstreets_widgets/extensions.dart';
 import 'package:backstreets_widgets/screens.dart';
 import 'package:flutter/material.dart';
-
-import '../src/preset.dart';
-import '../widgets/presets_list_tile.dart';
-import 'presets_screen.dart';
+import 'package:presets/src/preset.dart';
+import 'package:presets/src/screens/presets_screen.dart';
+import 'package:presets/src/widgets/presets_list_tile.dart';
 
 /// The main screen of the application.
 class MainScreen extends StatelessWidget {

@@ -1,9 +1,7 @@
 import 'package:backstreets_widgets/screens.dart';
 import 'package:backstreets_widgets/widgets.dart';
 import 'package:flutter/material.dart';
-
-import '../src/preset.dart';
-import '../widgets/preset_list_tile.dart';
+import 'package:presets/presets.dart';
 
 /// A screen to show [preset].
 class PresetScreen extends StatelessWidget {

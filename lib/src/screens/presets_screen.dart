@@ -3,10 +3,7 @@ import 'package:backstreets_widgets/screens.dart';
 import 'package:backstreets_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-import '../src/constants.dart';
-import '../src/preset.dart';
-import 'preset_screen.dart';
+import 'package:presets/presets.dart';
 
 void _doNothing() {}
 
